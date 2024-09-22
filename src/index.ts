@@ -11,7 +11,7 @@ import orderRoute from "./routes/order.route";
 
 dotenv.config();
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 7000;
 
 // default middleware
 app.use(bodyParser.json({ limit: "10mb" }));
@@ -35,5 +35,5 @@ app.use("/api/v1/order", orderRoute);
 
 app.listen(PORT, () => {
   connectDB();
-  console.log(`Server listen at port ${PORT}`);
+  console.log(`Server listen at port http://localhost:${PORT}`);
 });
