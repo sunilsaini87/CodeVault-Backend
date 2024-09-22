@@ -23,16 +23,17 @@ export const signup = async (req: Request, res: Response) => {
         message: "User already exist with this email",
       });
     }
-    const hashedPassword = await bcrypt.hash(password, 10);
+    const salt = await bcrypt.genSalt(10);
+    const hashedPassword = await bcrypt.hash(password, salt);
     const verificationToken = generateVerificationCode();
 
     user = await User.create({
-      fullname,
-      email,
+      fullname: fullname,
+      email: email,
       password: hashedPassword,
       contact: Number(contact),
       verificationToken,
-      verificationTokenExpiresAt: Date.now() + 24 * 60 * 60 * 1000,
+      verificationTokenExpiresAt: new Date(Date.now() + 24 * 60 * 60 * 1000),
     });
     generateToken(res, user);
 

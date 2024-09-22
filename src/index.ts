@@ -27,7 +27,6 @@ app.use(
   })
 );
 
-// api
 app.use("/api/v1/user", userRoute);
 app.use("/api/v1/restaurant", restaurantRoute);
 app.use("/api/v1/menu", menuRoute);

@@ -1,16 +1,16 @@
 {
-  "name": "server",
-  "version": "1.0.0",
-  "description": "",
+  "name": "rest-api-muta-engine",
+  "version": "1.1.1",
+  "description": "MutaEngine's NodeJs Intern Assignment",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon src/index.ts",
-    "stripe": "stripe listen --forward-to localhost:8000/api/v1/order/webhook",
+    "stripe": "stripe listen --forward-to localhost:7000/api/v1/order/webhook",
     "build": "npm install && npm install --prefix client && npm run build --prefix client",
     "start": "nodemon src/index.ts"
   },
   "keywords": [],
-  "author": "",
+  "author": "Sunil Kumar Saini",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
